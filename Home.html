@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home Page</title>
+    <style>
+        body {
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            position: absolute;
+            top: 30px;
+            left: 120px;
+            font-weight: bold;
+            background: linear-gradient(to right, blue, Black);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+            font-size: 2em;
+        }
+
+        .dollar-sign {
+            font-size: 20px;
+            position: absolute;
+            top: 100%;
+            left: 0;
+        }
+
+        .triangle-container {
+            position: relative;
+            height: 100px;
+            margin-top: 40px;
+        }
+
+        .triangle {
+            width: 0;
+            height: 0;
+            border-left: 50px solid black;
+            border-right: 50px solid blue;
+            border-top: 80px solid transparent;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .rectangle-container {
+            position: relative;
+            margin-top: 10px;
+        }
+
+        .rectangle {
+            height: 100px;
+            background-color: red;
+            margin-bottom: 10px;
+            margin-left: 10px;
+            margin-right: 20px;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+        }
+        
+        .rectangle-text {
+            text-align: center;
+            color: white;
+        }
+        
+        .split-rectangle-container {
+            display: flex;
+            margin-bottom: 10px;
+        }
+        
+        .split-rectangle {
+            flex: 1;
+            height: 100px;
+            background-color: red;
+            margin-right: 10px;
+            margin-left: 10px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .split-rectangle-text {
+            text-align: center;
+            color: white;
+               }
+        
+        .hamburger {
+            display: inline-block;
+            width: 30px;
+            height: 20px;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            cursor: pointer;
+        }
+        
+        .hamburger span {
+            display: block;
+            position: absolute;
+            height: 4px;
+            width: 100%;
+            background-color: #000;
+            transition: transform 0.3s ease;
+        }
+        
+        .hamburger span:nth-child(1) {
+            top: 0;
+        }
+        
+        .hamburger span:nth-child(2),
+        .hamburger span:nth-child(3) {
+            top: 8px;
+        }
+        
+        .hamburger span:nth-child(4) {
+            top: 16px;
+        }
+        
+        .hamburger.active span:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+        
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+        
+        .hamburger.active span:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+        
+        .menu-container {
+            display: none;
+            position: absolute;
+            top: 40px;
+            left: 10px;
+            padding: 10px;
+            background-color: grey;
+            border-radius: 4px;
+            box-shadow: 0 2px 100px rgba(0, 0, 0, 0.2);
+            width: 230px;
+                      
+            
+        }
+        
+        .menu-container.active {
+            display: block;
+        }
+        
+        .menu-item {
+            padding: 10px;
+            cursor: pointer;
+            font-size: 20px;
+            position: relative;
+        }
+        
+        .menu-item:hover {
+            color: blue;
+        }
+        
+        .submenu-container {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 100%;
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            background-color: violet;
+            width: 100px;
+        }
+        
+        .menu-item:hover .submenu-container {
+            display: block;
+        }
+        
+        .submenu-item {
+            padding: 10px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        
+        .submenu-item:hover {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">SWEATEARN <span class="dollar-sign">$</span></div>
+    <div class="triangle-container">
+        <div class="triangle"></div>
+    </div>
+    <div class="rectangle-container">
+        <div class="split-rectangle-container">
+            <div class="split-rectangle">
+                <span class="split-rectangle-text">EXPENSES💎: RF3,000</span>
+            </div>
+            <div class="split-rectangle">
+                <span class="split-rectangle-text">RF250,000</span>
+            </div>
+        </div>
+        <div class="rectangle" style="background-color: green;">
+            <span class="rectangle-text">MAIN BALANCEⓂ️:</span>
+            <br>
+            <span class="rectangle-text">RF100,238</span>
+        </div>
+        <div class="rectangle" style="background-color: blue;">
+            <span class="rectangle-text">WITHDRAWN⬇️:</span>
+            <br>
+            <span class="rectangle-text">RF125,000</span>
+        </div>
+        <div class="rectangle" style="background-color: red;">
+            <span class="rectangle-text">TRIVIA EARNINGS🔤:</span>
+            <br>
+            <span class="rectangle-text">RF12,000</span>
+        </div>
+        <div class="rectangle" style="background-color: orange;">
+            <span class="rectangle-text">YOUTUBEBALANCE▶️:</span>
+            <br>
+            <span class="rectangle-text">RF8,500</span>
+        </div>
+        <div class="rectangle" style="background-color: indigo;">
+            <span class="rectangle-text">TIKTOK EARNINGS🧾:</span>
+            <br>
+            <span class="rectangle-text">RF4,700</span>
+        </div>
+        <div class="rectangle" style="background-color: red;">
+            <span class="rectangle-text">WELCOMEBONUS:</span>
+            <br>
+            <span class="rectangle-text">RF2,500</span>
+        </div>
+        <div class="rectangle" style="background-color: violet;">
+            <span class="rectangle-text">ADS CLICK🪙</span>
+            <br>
+            <span class="rectangle-text">RF3,600</span>
+        </div>
+        <div class="rectangle" style="background-color: blue;">
+            <span class="rectangle-text">BEST AGENT BONUS📢:</span>
+            <br>
+            <span class="rectangle-text">RF30,000</span>
+        </div>
+    </div>
+    <div class="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <div class="menu-container" id="menuContainer">
+        <div class="menu-item">
+            Menu 1
+            <div class="submenu-container">
+                <div class="submenu-item">Submenu 1</div>
+                <div class="submenu-item">Submenu 2</div>
+                <div class="submenu-item">Submenu 3</div>
+            </div>
+        </div>
+        <div class="menu-item">
+            Menu 2
+            <div class="submenu-container">
+                <div class="submenu-item">Submenu 1</div>
+                <div class="submenu-item">Submenu 2</div>
+                <div class="submenu-item">Submenu 3</div>
+            </div>
+        </div>
+        <div class="menu-item">
+            Menu 3
+            <div class="submenu-container">
+                <div class="submenu-item">Submenu 1</div>
+                <div class="submenu-item">Submenu 2</div>
+                <div class="submenu-item">Submenu 3</div>
+            </div>
+        </div>
+        <div class="menu-item">
+            Menu 4
+            <div class="submenu-container">
+                <div class="submenu-item">Submenu 1</div>
+                <div class="submenu-item">Submenu 2</div>
+                <div class="submenu-item">Submenu 3</div>
+            </div>
+        </div>
+        <div class="menu-item">
+            Menu 5
+            <div class="submenu-container">
+                <div class="submenu-item">Submenu 1</div>
+                <div class="submenu-item">Submenu 2</div>
+                <div class="submenu-item">Submenu 3</div>
+            </div>
+        </div>
+                    Menu 6
+            <div class="submenu-container">
+                <div class="submenu-item">Submenu 1</div>
+                <div class="submenu-item">Submenu 2</div>
+                <div class="submenu-item">Submenu 3</div>
+            </div>
+        </div>            
+    </div>
+
+    <script>
+        function toggleMenu() {
+            const menuContainer = document.getElementById('menuContainer');
+            menuContainer.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
